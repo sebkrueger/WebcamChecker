@@ -1,0 +1,7 @@
+# do not ignore a gitignore file
+!.gitignore
+
+# Composer and Unitteststuff
+vendor/*
+composer.lock
+phpunit.xml
