@@ -24,5 +24,6 @@
 </head>
 <body>
 <p>WebcamChecker Demopage</p>
+<img src="webcam/current.jpg" alt="demo webcam pic" />
 </body>
 </html>
