@@ -21,4 +21,13 @@ class apache {
                      'setenvif.load', 'setenvif.conf',
                      'env.load']: }
 
+  # Remove default index.html if created and remove it only when default index.html
+  # NoOne need the default page ;)
+  exec { 'remove-default-apache-index-page':
+    command => "rm /var/www/index.html",
+    path => ['/bin', '/usr/bin'],
+    require => Package['apache2'],
+    onlyif  => '[ "$(md5sum /var/www/index.html)" = "21dde95d9d269cbb2fa6560309dca40c  /var/www/index.html" ]';
+  }
+
 }

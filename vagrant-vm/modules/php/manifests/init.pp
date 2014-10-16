@@ -19,7 +19,8 @@ class php {
 
     '/etc/php5/apache2/php.ini':
        source => 'puppet:///modules/php/apache2-php.ini',
-       require => Package['php5-common'];
+       require => Package['php5-common'],
+       notify => Service['apache2'];
 
     '/etc/php5/cli':
        ensure => directory,

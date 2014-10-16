@@ -8,6 +8,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Box to build off the vm puppet is importent
   config.vm.box = "lcn/debian-wheezy-64"
 
+ # Don't check for box updates on every run
+  config.vm.box_check_update = false
+
   config.vm.hostname = "localhost"
 
   # Use not a login shell to prevent mesg outputs
